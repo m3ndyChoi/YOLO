@@ -1,6 +1,6 @@
-path: E:/0. 검사테스트/0. 화승/DatasetOutput/val/
-train: Train
-validation: Valid
-
+path: D:/PVS-2025/2. 프로젝트/2025/2509_화승알앤에이/마킹-학습데이터/Dataset-yolo/Real/
+train: train
+validation: val
+test: test
 class_num: 1
 class_list: ['DEF']

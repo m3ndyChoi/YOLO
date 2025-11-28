@@ -1,0 +1,31 @@
+# yolo/config/callbacks.yaml
+# 새로 생성하거나 기존 파일 수정
+
+model_checkpoint:
+  # Best 모델 저장 (AP@0.5 기준)
+  best:
+    monitor: 'val_ap50'
+    mode: 'max'
+    save_top_k: 3  # 상위 3개 저장
+    filename: 'best-{epoch:02d}-{val_ap50:.2f}'
+    auto_insert_metric_name: false
+    save_last: false
+  
+  # 마지막 모델 저장
+  last:
+    save_last: true
+    filename: 'last'
+  
+  # 에포크별 저장 (선택)
+  periodic:
+    every_n_epochs: 10
+    filename: 'epoch-{epoch:02d}'
+    save_top_k: -1  # 모든 주기적 체크포인트 저장
+
+early_stopping:
+  monitor: 'val_ap50'
+  patience: 30  # 30 에포크 동안 개선 없으면 중단
+  mode: 'max'
+  min_delta: 0.001  # 최소 개선 폭
+  verbose: true
+  strict: true
