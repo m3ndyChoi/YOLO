@@ -1,0 +1,12 @@
+task: inference
+
+fast_inference:
+data:
+  source: C:/Users/yschoi/Documents/GitHub/YOLO/data/MarkingTest/  # 절대 경로
+  image_size: ${image_size}
+  data_augment: {}
+nms:
+  min_confidence: 0.3
+  min_iou: 0.1
+  max_bbox: 300
+save_predict: True

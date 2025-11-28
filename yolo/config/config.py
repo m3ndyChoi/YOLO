@@ -60,7 +60,8 @@ class DataConfig:
     data_augment: Dict[str, int]
     source: Optional[Union[str, int]]
     dynamic_shape: Optional[bool]
-
+    persistent_workers: bool = True 
+    prefetch_factor: int = 2
 
 @dataclass
 class OptimizerArgs:

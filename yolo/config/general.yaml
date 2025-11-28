@@ -11,3 +11,10 @@ use_wandb: True
 use_tensorboard: False
 
 weight: True # Path to weight or True for auto, False for no pretrained weight
+
+dataloader:
+  num_workers: 8
+  persistent_workers: true
+  pin_memory: true
+  prefetch_factor: 2
+  batch_size: 16

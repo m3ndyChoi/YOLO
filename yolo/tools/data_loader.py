@@ -241,6 +241,8 @@ def create_dataloader(data_cfg: DataConfig, dataset_cfg: DatasetConfig, task: st
         batch_size=data_cfg.batch_size,
         num_workers=data_cfg.cpu_num,
         pin_memory=data_cfg.pin_memory,
+        persistent_workers=getattr(data_cfg, 'persistent_workers', True),
+        prefetch_factor=getattr(data_cfg, 'prefetch_factor', 2),
         collate_fn=collate_fn,
     )
 
